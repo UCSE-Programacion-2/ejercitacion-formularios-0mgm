@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --n1-color: #1cd1b0;
+  --n2-color: #00669f;
+  --n3-color: #f3f3f3;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -69,9 +75,15 @@ a {
   font-size: 16px;
 }
 
+.site-footer p {
+  text-align: center;
+  flex: 1;
+}
+
 .footer-github {
   font-weight: 700;
   text-decoration: none;
+  font-size: 30px;
 }
 
 .footer-github:hover {
@@ -84,9 +96,10 @@ a {
   bottom: 96px;
   width: 82px;
   height: 82px;
+  top: 50%;
   border-radius: 50%;
-  background: #1cd1b0;
-  color: #001d2d;
+  background: var(--n2-color);
+  color: var(--n3-color);
   font-size: 48px;
   font-weight: 700;
   display: flex;
@@ -98,4 +111,71 @@ a {
 .fab-plus:focus-visible {
   outline: 3px solid #00669f;
   outline-offset: 3px;
+}
+
+.cartas-heroes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-card {
+  position: relative;
+  background-color: #f3f3f3;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  p {
+    padding: 0 20px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  button {
+    background-color: var(--n2-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+  }
+}
+
+.bi-heart-fill {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: red;
+  font-size: 20px;
+}
+
+.banner {
+  width: 100%;
+  height: 180px;
+  display: block;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  margin: -50px auto 15px auto;
+  position: relative;
+  object-fit: cover;
 }
