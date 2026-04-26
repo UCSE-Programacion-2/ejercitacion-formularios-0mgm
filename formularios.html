@@ -1,52 +1,96 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DC Heroes — Añadí tu super | Programación II</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Karla&family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/formularios.css" />
-  </head>
-  <body>
-    <!--
-      Plantilla guía — Completá el markup según el frame «Añadir» de Figma.
-      Recordá: los tests automáticos sólo miran este archivo y css/formularios.css.
-    -->
-    <div class="page-shell">
-      <div class="top-bar">Descuentos 20%</div>
 
-      <header class="brand-header">
-        <p class="brand-title">DC Heroes</p>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DC Heroes — Añadí tu super | Programación II</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Karla&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/formularios.css" />
+</head>
 
-      <nav class="main-nav" aria-label="Principal">
-        <a href="#">Contacto</a>
-        <a href="#">Registrarme</a>
-        <a href="#">Ingresar</a>
-      </nav>
+<body>
+  <div class="page-shell">
+    <div class="top-bar">Descuentos 20%</div>
+    <header class="brand-header">
+      <p class="brand-title">DC Heroes</p>
+    </header>
+    <nav class="main-nav" aria-label="Principal">
+      <a href="#">Contacto</a>
+      <a href="#">Registrarme</a>
+      <a href="#">Ingresar</a>
+    </nav>
 
-      <main class="page-main">
-        <!-- TODO: envolver el formulario en <form method="post" action="#"> -->
-        <!-- TODO: título «Añadí tu super!» y texto guía de la maqueta -->
-        <!-- TODO: campos Nombre (*), Especie (*), Fecha, Foto, Descripción -->
-        <!-- TODO: fieldset Poderes con 4 checkboxes -->
-        <!-- TODO: fieldset Tipo de personaje con radios name="tipo-personaje" -->
-        <!-- TODO: botón <button type="submit">Añadir</button> -->
-        <p class="placeholder-copy">
-          Reemplazá este párrafo por el formulario completo respetando la jerarquía del diseño de
-          referencia.
-        </p>
-      </main>
+    <main class="page-main">
+      <section class="super-formulario">
+        <h1 class="super-titulo">Añadí tu super!</h1>
+        <p class="super-sub-titulo">Agregá tu personaje favorito completando las opciones.</p>
 
-      <footer class="site-footer">
-        <p>Todos los derechos reservados - [TU NOMBRE Y APELLIDO]</p>
-        <a href="https://github.com/" class="footer-github">GitHub</a>
-      </footer>
-    </div>
-  </body>
+        <form action="#" method="post">
+
+          <div class="campo-nombre">
+            <label for="nombre">*Nombre</label>
+            <input type="text" name="Nombre" id="nombre" placeholder="Nombre" required />
+          </div>
+
+          <div class="campo-especie">
+            <label for="especie">*Especie</label>
+            <select name="Especie" id="especie" required>
+              <option value="kryptoniano">Kryptoniano</option>
+              <option value="marciano">Marciano</option>
+              <option value="atlante">Atlante</option>
+              <option value="unknown">Unknown</option>
+              <option value="humano">Humano</option>
+            </select>
+          </div>
+
+          <div class="campo-fecha">
+            <label for="fecha">Fecha</label>
+            <input type="date" name="Fecha" id="fecha" />
+          </div>
+
+          <div class="campo-foto">
+            <label for="archivo">Agregar Foto</label>
+            <input type="file" name="Archivo" id="archivo" />
+          </div>
+
+          <div class="campo-desc">
+            <label for="comentario">Descripción</label>
+            <textarea name="comentario" id="comentario" placeholder="Descripción"></textarea>
+          </div>
+
+          <fieldset class="campo-poderes">
+            <legend>Poderes</legend>
+            <div class="poderes-grupo">
+              <label><input type="checkbox" name="poder" value="volar" /> Volar</label>
+              <label><input type="checkbox" name="poder" value="superinteligencia" /> SuperInteligencia</label>
+              <label><input type="checkbox" name="poder" value="rayo-laser" /> Vista de rayo láser</label>
+              <label><input type="checkbox" name="poder" value="billetera" /> Billetera gorda</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="campo-tipo">
+            <legend>Tipo de personaje</legend>
+            <div class="tipo-grupo">
+              <label><input type="radio" name="tipo-personaje" value="heroe" /> Héroe / Heroína</label>
+              <label><input type="radio" name="tipo-personaje" value="villano" /> Villano / Villana</label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="super-boton">Añadir</button>
+
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>Todos los derechos reservados - Maizares Mauricio</p>
+      <a href="https://github.com/" class="footer-github">GitHub</a>
+    </footer>
+  </div>
+</body>
+
 </html>
